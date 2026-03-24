@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    position: relative;
+    width: 90vw;
+    max-width: 600px;
+    height: 66.67vw;
+    max-height: 400px;
+    background-color: #ffffff;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+
+.player {
+    position: absolute;
+    bottom: 20px;
+    left: 250px;
+    width: 100px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 10px;
+}
+
+.ball {
+    position: absolute;
+    top: 50px;
+    left: 290px;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
