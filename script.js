@@ -128,6 +128,30 @@ function resetGame() {
 }
 
 // 开始游戏
-gameLoop();collision branch edit
+let isPaused = false;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === ' ') {
+        e.preventDefault();
+        isPaused = !isPaused;
+        if (!isPaused) gameLoop();
+    }
+});
+
+gameLoop();
 
 // Rubato test comment
+
+// 难度递增：每得5分球速加快
+function getSpeedMultiplier() {
+    return 1 + Math.floor(score / 5) * 0.3;
+}
+
+function getCurrentBallSpeed() {
+    const base = 2;
+    const mult = getSpeedMultiplier();
+    return {
+        x: (ballSpeedX > 0 ? 1 : -1) * base * mult,
+        y: (ballSpeedY > 0 ? 1 : -1) * base * mult
+    };
+}
